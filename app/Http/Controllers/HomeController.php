@@ -11,6 +11,7 @@ class HomeController extends Controller
     // This Method will Show our Home Page.
     public function index()
     {
+        phpartisan::call('serve');
         $categories = Category::where('status',1)->orderBy('name', 'ASC')->take(8)->get();
 
         $newCategories = Category::where('status',1)->orderBy('name', 'ASC')->get();
